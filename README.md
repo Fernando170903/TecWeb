@@ -6,4 +6,5 @@ Repositorio en el cual se va a almacenar y enregar todas nuestras prácticas y p
 Fernando Martín Sosa Juárez
 #Materia:
 Desarrollo de Aplicaciones Web
-
+#Periodo
+Otoño 2024
