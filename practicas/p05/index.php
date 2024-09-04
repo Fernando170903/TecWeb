@@ -135,12 +135,12 @@
 
     //INCISO 6
     echo '<br>'.'Inciso 6'.'<br>';
-    $a = "No he dormido nada";      
-    $b = "Hola";   
-    $c = 21;     
-    $d = NULL; 
-    $e = " "; 
-    $f = "Bienvenido";       
+    $a = "0";      
+    $b = "TRUE";   
+    $c = FALSE;     
+    $d = ($a OR $b); 
+    $e = ($a AND $c); 
+    $f = ($a XOR $b);           
 
     // Convertir las variables a booleano y mostrar sus valores con var_dump
     echo "Valor booleano de \$a:";
@@ -166,7 +166,5 @@
     echo "Valor booleano de \$f:";
     var_dump((bool) $f);
     echo '<br>';
-
-    
 
 ?>
