@@ -177,4 +177,15 @@
     echo "Valor de \$e como texto: $e_text\n";
     echo '<br>';
 
+    echo '<br>'.'Inciso 7'.'<br>';
+    echo 'Version de apache y PHP: ';
+    echo $_SERVER['SERVER_SOFTWARE'] . "<br>";
+
+    echo 'Version del sistema operativo (servidor): ' ;
+    echo "Sistema operativo del servidor: " . PHP_OS . "<br>";
+
+    echo 'Idioma: ';
+    echo $_SERVER['HTTP_ACCEPT_LANGUAGE']."<br>";
+
+
 ?>
