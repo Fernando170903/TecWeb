@@ -167,4 +167,14 @@
     var_dump((bool) $f);
     echo '<br>';
 
+    // Convertir booleanos a texto
+    $c_text = $c ? "true" : "false";
+    $e_text = $e ? "true" : "false";
+
+    // Mostrar los valores con echo
+    echo "Valor de \$c como texto: $c_text\n";
+    echo '<br>';
+    echo "Valor de \$e como texto: $e_text\n";
+    echo '<br>';
+
 ?>
