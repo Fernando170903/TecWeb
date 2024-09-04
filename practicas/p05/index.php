@@ -20,4 +20,24 @@
     echo $_element1;
     echo '<br>';
     //echo $house;
+
+    $a = "ManejadorSQL";
+    $b = 'MySQL';
+    $c = &$a;
+    echo $a;
+    echo '<br>';
+    echo $b;
+    echo'<br>';
+    echo $c;
+    echo'<br>';
+
+    $a = "PHP server";
+    $b = &$a;
+    echo $a;
+    echo '<br>';
+    echo $b;
+    echo'<br>';
+
+    
+
 ?>
