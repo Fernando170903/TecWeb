@@ -113,7 +113,7 @@
     $GLOBALS['z'] = $z;  // Actualizar la variable global
     var_dump($GLOBALS['z'][0]);
     echo '<br>';
-    
+
     // Mostrar contenido final de $z
     var_dump($GLOBALS['z']);
     echo '<br>';
@@ -133,5 +133,40 @@
     echo $c;
     echo '<br>';
 
+    //INCISO 6
+    echo '<br>'.'Inciso 6'.'<br>';
+    $a = "No he dormido nada";      
+    $b = "Hola";   
+    $c = 21;     
+    $d = NULL; 
+    $e = " "; 
+    $f = "Bienvenido";       
+
+    // Convertir las variables a booleano y mostrar sus valores con var_dump
+    echo "Valor booleano de \$a:";
+    var_dump((bool) $a); 
+    echo '<br>';
+
+    echo "Valor booleano de \$b:";
+    var_dump((bool) $b);
+    echo '<br>';
+
+    echo "Valor booleano de \$c:";
+    var_dump((bool) $c); 
+    echo '<br>';
+
+    echo "Valor booleano de \$d:";
+    var_dump((bool) $d);
+    echo '<br>';
+
+    echo "Valor booleano de \$e:";
+    var_dump((bool) $e);
+    echo '<br>';
+
+    echo "Valor booleano de \$f:";
+    var_dump((bool) $f);
+    echo '<br>';
+
+    
 
 ?>
