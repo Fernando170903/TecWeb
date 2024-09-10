@@ -43,8 +43,10 @@
           <p>Color <em>(escoge uno)</em>:</p>
         </legend>
         <ul>
-          <li><input type="radio" name="color" value="red">Rojo</li>
-          <li><input type="radio" name="color" value="blue" checked>Azul</li>
+          <li><input type="radio" name="color" value="red" checked>Rojo</li>
+          <!--Ceamos un botón de tipo radio, debido a que los tenis solo pueden tener un color único-->
+          <!-- Con checked lo que hacemos es configurarla por defecto -->
+          <li><input type="radio" name="color" value="blue">Azul</li>
           <li><input type="radio" name="color" value="black">Negro</li>
           <li><input type="radio" name="color" value="silver">Plateado</li>
         </ul>
@@ -55,15 +57,19 @@
         </legend>
         <ul>
           <li><input type="checkbox" name="features[]" value="laces">Cordones brillantes</li>
+          <!-- Creamos un elemento de tipo checkbox -->
           <li><input type="checkbox" name="features[]" value="logo" checked>Logo metálico</li>
+          <!-- Lo establecemos como opción preseleccionada por defecto -->
           <li><input type="checkbox" name="features[]" value="soles">Suela luminosa</li>
           <li><input type="checkbox" name="features[]" value="wifi">WiFi integrado</li>
         </ul>
       </fieldset>
       <fieldset>
+        <!-- Elemento fieldset para agrupar los controles en formularios -->
         <legend>
           <p>Talla</p>
         </legend>
+        <!-- Elemento legend para definir el título que se va mostrar en cada reacuadro agrupador generado anteriormente por fieldset -->
         <p>Las medidas reflejan el estándar masculino:
           <select name="size" size="1">
             <option value="3">3</option>
@@ -76,6 +82,7 @@
             <option value="10">10</option>
             <option value="11">11</option>
           </select>
+          <!-- Añadimos el elemento select para que sea un menú de multiples opciones seleccionables -->
         </p>
       </fieldset>
     </fieldset>
