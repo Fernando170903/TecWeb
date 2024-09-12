@@ -63,6 +63,46 @@
     }
     ?>
 
+    <h2>Ejercicio 3</h2>
+    <p>Encontrar el primer número aleatorio que sea múltiplo de un número dado</p>
+
+    <!-- Formulario para enviar el número dado vía GET -->
+    <form method="get" action="index.php">
+        <label for="numero">Introduce un número:</label>
+        <input type="text" id="numero" name="numero" required>
+        <input type="submit" value="Encontrar múltiplo (while)">
+    </form>
+
+    <!-- Variante con do-while -->
+    <form method="get" action="index.php">
+        <input type="hidden" name="dowhile" value="1">
+        <label for="numero">Introduce un número:</label>
+        <input type="text" id="numero" name="numero" required>
+        <input type="submit" value="Encontrar múltiplo (do-while)">
+    </form>
+
+    <?php
+    include_once 'C:/xampp/htdocs/tecweb/practicas/p07/src/funciones.php'; // Incluir archivo de funciones
+    
+    // Comprobar si se ha enviado un número vía GET
+    if (isset($_GET['numero']) && is_numeric($_GET['numero'])) {
+        $numeroDado = intval($_GET['numero']);
+
+        // Opción para ciclo do-while
+        if (isset($_GET['dowhile'])) {
+            // Llamar a la función que utiliza do-while
+            echo "<h3>Resultado usando do-while:</h3>";
+            $numeroAleatorio = encontrarMultiploDoWhile($numeroDado);
+            echo "<p>El primer número aleatorio que es múltiplo de {$numeroDado} es: {$numeroAleatorio}</p>";
+        } else {
+            // Llamar a la función que utiliza while
+            echo "<h3>Resultado usando while:</h3>";
+            $numeroAleatorio = encontrarMultiploWhile($numeroDado);
+            echo "<p>El primer número aleatorio que es múltiplo de {$numeroDado} es: {$numeroAleatorio}</p>";
+        }
+    }
+    ?>
+
 </body>
 
 </html>

@@ -36,5 +36,24 @@ function generarSecuencia()
     ];
 }
 
+function encontrarMultiploWhile($numeroDado)
+{
+    $numeroAleatorio = rand(1, 999);
+    while ($numeroAleatorio % $numeroDado !== 0) {
+        $numeroAleatorio = rand(1, 999);
+    }
+    return $numeroAleatorio;
+}
+
+// Función para encontrar el múltiplo usando el ciclo do-while
+function encontrarMultiploDoWhile($numeroDado)
+{
+    $numeroAleatorio = 0;
+    do {
+        $numeroAleatorio = rand(1, 999);
+    } while ($numeroAleatorio % $numeroDado !== 0);
+    return $numeroAleatorio;
+}
+
 
 ?>
