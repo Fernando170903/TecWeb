@@ -8,4 +8,33 @@ function gen_multiploaletorio($num)
     }
 }
 
+function generarSecuencia()
+{
+    $matriz = [];
+    $iteraciones = 0;
+    $totalNumeros = 0;
+
+    // Continuar generando números hasta encontrar una secuencia impar, par, impar
+    do {
+        $fila = [];
+        $fila[] = rand(1, 999); // Primer número aleatorio
+        $fila[] = rand(1, 999); // Segundo número aleatorio
+        $fila[] = rand(1, 999); // Tercer número aleatorio
+
+        $matriz[] = $fila;
+        $iteraciones++;
+        $totalNumeros += 3;
+
+        // Verificar si la secuencia es impar, par, impar
+        $esSecuenciaValida = ($fila[0] % 2 != 0) && ($fila[1] % 2 == 0) && ($fila[2] % 2 != 0);
+    } while (!$esSecuenciaValida);
+
+    return [
+        'matriz' => $matriz,
+        'iteraciones' => $iteraciones,
+        'totalNumeros' => $totalNumeros
+    ];
+}
+
+
 ?>
