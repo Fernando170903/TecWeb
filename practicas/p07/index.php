@@ -133,6 +133,73 @@
     }
     ?>
 
+    <!-- EJERCICIO 5 -->
+    <h2>Ejercicio 5</h2>
+    <p>Identificar persona de sexo "femenino" cuya edad esté entre 18 y 35 años</p>
+
+    <form method="post" action="index.php">
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" required><br>
+
+        <label for="sexo">Sexo:</label>
+        <select id="sexo" name="sexo" required>
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+        </select><br>
+
+        <input type="submit" value="Verificar">
+    </form>
+
+    <?php
+    if (isset($_POST['edad']) && isset($_POST['sexo'])) {
+        $edad = intval($_POST['edad']);
+        $sexo = $_POST['sexo'];
+
+        if ($sexo === "femenino" && $edad >= 18 && $edad <= 35) {
+            echo "<p>Bienvenida, usted está en el rango de edad permitido.</p>";
+        } else {
+            echo "<p>Error, no cumple con los criterios.</p>";
+        }
+    }
+    ?>
+
+    <h2>Ejercicio 6</h2>
+    <p>Consultar información del parque vehicular por matrícula o todos los autos registrados</p>
+
+    <form method="get" action="index.php">
+        <label for="matricula">Buscar por Matrícula:</label>
+        <input type="text" id="matricula" name="matricula"><br>
+        <input type="submit" value="Buscar">
+    </form>
+
+    <form method="get" action="index.php">
+        <input type="submit" name="todos" value="Mostrar todos los vehículos">
+    </form>
+
+    <?php
+    if (isset($_GET['matricula']) && !empty($_GET['matricula'])) {
+        $matricula = $_GET['matricula'];
+        $vehiculos = obtenerParqueVehicular();
+
+        if (isset($vehiculos[$matricula])) {
+            echo "<h3>Información del vehículo con matrícula $matricula:</h3>";
+            echo "<pre>";
+            print_r($vehiculos[$matricula]);
+            echo "</pre>";
+        } else {
+            echo "<h3>No se encontró información para la matrícula $matricula.</h3>";
+        }
+    }
+
+    if (isset($_GET['todos'])) {
+        $vehiculos = obtenerParqueVehicular();
+        echo "<h3>Información de todos los vehículos registrados:</h3>";
+        echo "<pre>";
+        print_r($vehiculos);
+        echo "</pre>";
+    }
+    ?>
+
 </body>
 
 </html>
