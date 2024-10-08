@@ -77,7 +77,7 @@
                     <td><img src="<?= $value['imagen'] ?>" alt="Imagen de producto" style="width: 50px; height: auto;"></td>
                     <td>
                         <!-- Botón para modificar el producto -->
-                        <a href="formulario_productos_v2.php?id=<?= $value['id'] ?>" class="btn btn-warning btn-sm">Modificar</a>
+                        <a href="formulario_productos_v3.php?id=<?= $value['id'] ?>" class="btn btn-warning btn-sm">Modificar</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>
