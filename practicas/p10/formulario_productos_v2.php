@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Producto</title>
+    <title>Formulario de Celulares</title>
     <script>
         function validarFormulario() {
             var nombre = document.getElementById('nombre').value;
@@ -91,9 +91,14 @@
         <label for="marca">Marca:</label>
         <select id="marca" name="marca" required>
             <option value="">Seleccione una marca</option>
-            <option value="Marca1" <?= isset($producto) && $producto['marca'] == 'Marca1' ? 'selected' : '' ?>>Nike</option>
-            <option value="Marca2" <?= isset($producto) && $producto['marca'] == 'Marca2' ? 'selected' : '' ?>>Adidas</option>
-            <!-- Agrega las demás marcas aquí -->
+            <option value="Samsung" <?= isset($producto) && $producto['marca'] == 'Samsung' ? 'selected' : '' ?>>Samsung</option>
+            <option value="Apple" <?= isset($producto) && $producto['marca'] == 'Apple' ? 'selected' : '' ?>>Apple</option>
+            <option value="Xiaomi" <?= isset($producto['marca']) && $producto['marca'] == 'Xiaomi' ? 'selected' : '' ?>>Xiaomi</option>
+            <option value="Oppo" <?= isset($producto['marca']) && $producto['marca'] == 'Oppo' ? 'selected' : '' ?>>Oppo</option>
+            <option value="Google" <?= isset($producto['marca']) && $producto['marca'] == 'Google' ? 'selected' : '' ?>>Google</option>
+            <option value="Motorola" <?= isset($producto['marca']) && $producto['marca'] == 'Motorola' ? 'selected' : '' ?>>Motorola</option>
+            <option value="Huawei" <?= isset($producto['marca']) && $producto['marca'] == 'Huawei' ? 'selected' : '' ?>>Huawei</option>
+            <option value="Realme" <?= isset($producto['marca']) && $producto['marca'] == 'Realme' ? 'selected' : '' ?>>Realme</option>
         </select><br><br>
 
         <label for="modelo">Modelo:</label>
