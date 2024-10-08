@@ -67,7 +67,7 @@
 						<td><?= htmlspecialchars($producto['detalles'], ENT_QUOTES, 'UTF-8') ?></td>
 						<td><img src="<?= htmlspecialchars($producto['imagen']) ?>" alt="Imagen del producto"></td>
 						<td>
-							<a href="formulario_productos_v2.html?id=<?= $producto['id'] ?>" class="btn btn-warning btn-sm">Modificar</a> <!-- Botón de modificar -->
+							<a href="formulario_productos_v2.php?id=<?= $producto['id'] ?>" class="btn btn-warning btn-sm">Modificar</a> <!-- Botón de modificar -->
 						</td>
 					</tr>
 					<?php endforeach; ?>
