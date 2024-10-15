@@ -78,7 +78,7 @@
         }
     ?>
 
-    <h1><?= isset($producto) ? 'Modificar Producto' : 'Registrar un Nuevo Producto' ?></h1>
+    <h1><?= isset($producto) ? 'Modificar Producto' : 'Modificar producto' ?></h1>
     <form action="set_producto_v2.php" method="POST" onsubmit="return validarFormulario()">
         <!-- Si hay un producto, enviamos también el ID -->
         <?php if (isset($producto)): ?>
