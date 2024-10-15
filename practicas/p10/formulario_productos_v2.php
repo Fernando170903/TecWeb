@@ -116,7 +116,7 @@
         <label for="imagen">Imagen (ruta):</label>
         <input type="text" id="imagen" name="imagen" value="<?= isset($producto) ? htmlspecialchars($producto['imagen']) : '' ?>"><br><br>
 
-        <input type="submit" value="<?= isset($producto) ? 'Modificar Producto' : 'Registrar Producto' ?>">
+        <input type="submit" value="<?= isset($producto) ? 'Modificar Producto' : 'Modificar producto' ?>">
     </form>
 </body>
 </html>
