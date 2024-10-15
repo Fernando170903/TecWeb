@@ -6,7 +6,7 @@ var baseJSON = {
     "marca": "NA",
     "detalles": "NA",
     "imagen": "img/imagen.png"
-  };
+};
 
 // FUNCIÓN CALLBACK DE BOTÓN "Buscar"
 function buscarID(e) {
@@ -27,24 +27,24 @@ function buscarID(e) {
     client.onreadystatechange = function () {
         // SE VERIFICA SI LA RESPUESTA ESTÁ LISTA Y FUE SATISFACTORIA
         if (client.readyState == 4 && client.status == 200) {
-            console.log('[CLIENTE]\n'+client.responseText);
-            
+            console.log('[CLIENTE]\n' + client.responseText);
+
             // SE OBTIENE EL OBJETO DE DATOS A PARTIR DE UN STRING JSON
             let productos = JSON.parse(client.responseText);    // similar a eval('('+client.responseText+')');
-            
+
             // SE VERIFICA SI EL OBJETO JSON TIENE DATOS
-            if(Object.keys(productos).length > 0) {
+            if (Object.keys(productos).length > 0) {
                 // SE CREA UNA LISTA HTML CON LA DESCRIPCIÓN DEL PRODUCTO
                 let descripcion = '';
-                    descripcion += '<li>precio: '+productos.precio+'</li>';
-                    descripcion += '<li>unidades: '+productos.unidades+'</li>';
-                    descripcion += '<li>modelo: '+productos.modelo+'</li>';
-                    descripcion += '<li>marca: '+productos.marca+'</li>';
-                    descripcion += '<li>detalles: '+productos.detalles+'</li>';
-                
+                descripcion += '<li>precio: ' + productos.precio + '</li>';
+                descripcion += '<li>unidades: ' + productos.unidades + '</li>';
+                descripcion += '<li>modelo: ' + productos.modelo + '</li>';
+                descripcion += '<li>marca: ' + productos.marca + '</li>';
+                descripcion += '<li>detalles: ' + productos.detalles + '</li>';
+
                 // SE CREA UNA PLANTILLA PARA CREAR LA(S) FILA(S) A INSERTAR EN EL DOCUMENTO HTML
                 let template = '';
-                    template += `
+                template += `
                         <tr>
                             <td>${productos.id}</td>
                             <td>${productos.nombre}</td>
@@ -57,7 +57,59 @@ function buscarID(e) {
             }
         }
     };
-    client.send("id="+id);
+    client.send("id=" + id);
+}
+
+// FUNCIÓN CALLBACK DE BOTÓN "Buscar Producto"
+function buscarProducto(e) {
+    e.preventDefault();
+
+    // SE OBTIENE EL TÉRMINO DE BÚSQUEDA
+    var searchTerm = document.getElementById('search-term').value;
+
+    // SE CREA EL OBJETO DE CONEXIÓN ASÍNCRONA AL SERVIDOR
+    var client = getXMLHttpRequest();
+    client.open('POST', './backend/read.php', true);
+    client.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    client.onreadystatechange = function () {
+        // SE VERIFICA SI LA RESPUESTA ESTÁ LISTA Y FUE SATISFACTORIA
+        if (client.readyState == 4 && client.status == 200) {
+            console.log('[CLIENTE]\n' + client.responseText);
+
+            // SE OBTIENE EL OBJETO DE DATOS A PARTIR DE UN STRING JSON
+            let productos = JSON.parse(client.responseText);
+
+            // SE VERIFICA SI EL OBJETO JSON TIENE PRODUCTOS
+            if (productos.length > 0) {
+                let template = '';
+
+                // SE CREA UNA FILA HTML PARA CADA PRODUCTO ENCONTRADO
+                productos.forEach(producto => {
+                    let descripcion = '';
+                    descripcion += '<li>precio: ' + producto.precio + '</li>';
+                    descripcion += '<li>unidades: ' + producto.unidades + '</li>';
+                    descripcion += '<li>modelo: ' + producto.modelo + '</li>';
+                    descripcion += '<li>marca: ' + producto.marca + '</li>';
+                    descripcion += '<li>detalles: ' + producto.detalles + '</li>';
+
+                    template +=
+                        `<tr>
+                            <td>${producto.id}</td>
+                            <td>${producto.nombre}</td>
+                            <td><ul>${descripcion}</ul></td>
+                        </tr>`;
+                });
+
+                // SE INSERTA LA PLANTILLA EN EL ELEMENTO CON ID "productos"
+                document.getElementById("productos").innerHTML = template;
+            } else {
+                // SI NO HAY RESULTADOS, SE LIMPIA LA TABLA
+                document.getElementById("productos").innerHTML = '<tr><td colspan="3">No se encontraron productos.</td></tr>';
+            }
+        }
+    };
+    // Asegúrate de enviar 'search'
+    client.send("search=" + searchTerm);
 }
 
 // FUNCIÓN CALLBACK DE BOTÓN "Agregar Producto"
@@ -71,7 +123,7 @@ function agregarProducto(e) {
     // SE AGREGA AL JSON EL NOMBRE DEL PRODUCTO
     finalJSON['nombre'] = document.getElementById('name').value;
     // SE OBTIENE EL STRING DEL JSON FINAL
-    productoJsonString = JSON.stringify(finalJSON,null,2);
+    productoJsonString = JSON.stringify(finalJSON, null, 2);
 
     // SE CREA EL OBJETO DE CONEXIÓN ASÍNCRONA AL SERVIDOR
     var client = getXMLHttpRequest();
@@ -90,21 +142,21 @@ function agregarProducto(e) {
 function getXMLHttpRequest() {
     var objetoAjax;
 
-    try{
+    try {
         objetoAjax = new XMLHttpRequest();
-    }catch(err1){
+    } catch (err1) {
         /**
          * NOTA: Las siguientes formas de crear el objeto ya son obsoletas
          *       pero se comparten por motivos historico-académicos.
          */
-        try{
+        try {
             // IE7 y IE8
             objetoAjax = new ActiveXObject("Msxml2.XMLHTTP");
-        }catch(err2){
-            try{
+        } catch (err2) {
+            try {
                 // IE5 y IE6
                 objetoAjax = new ActiveXObject("Microsoft.XMLHTTP");
-            }catch(err3){
+            } catch (err3) {
                 objetoAjax = false;
             }
         }
@@ -117,6 +169,6 @@ function init() {
      * Convierte el JSON a string para poder mostrarlo
      * ver: https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/JSON
      */
-    var JsonString = JSON.stringify(baseJSON,null,2);
+    var JsonString = JSON.stringify(baseJSON, null, 2);
     document.getElementById("description").value = JsonString;
 }
