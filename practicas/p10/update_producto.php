@@ -32,6 +32,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id'])) {
     // Ejecuta la actualización
     if (mysqli_query($link, $sql)) {
         echo "Producto actualizado correctamente.";
+        echo "Producto actualizado correctamente.<br>";
+        echo "<a href='http://localhost/tecweb/practicas/p10/get_productos_xhtml_v2.php?tope=10000'>Ver todos los productos</a><br>";
+        echo "<a href='http://localhost/tecweb/practicas/p10/get_productos_vigentes_v2.php?tope=1000'>Ver productos vigentes</a><br>";
+        echo "<a href='http://localhost/tecweb/practicas/p10/formulario_productos.html'>Agregar nuevo producto</a>";
     } else {
         echo "ERROR: No se ejecutó $sql. " . mysqli_error($link);
     }
