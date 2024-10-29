@@ -10,6 +10,7 @@
      * NOTA: si la conexión falló $conexion contendrá false
      **/
     if(!$conexion) {
-        die('¡Base de datos NO conextada!');
+        die('¡Error de conexión (' . mysqli_connect_errno() . '): ' . mysqli_connect_error() . '!');
     }
+    
 ?>

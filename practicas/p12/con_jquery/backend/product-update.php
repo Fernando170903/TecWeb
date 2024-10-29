@@ -1,20 +1,33 @@
 <?php
-header('Content-Type: application/json');
-include 'database.php'; // Incluye tu conexión a la base de datos
+include_once __DIR__.'/database.php';
 
+// Leer el cuerpo de la solicitud
 $data = json_decode(file_get_contents("php://input"), true);
 
-// Aquí debes agregar la lógica para insertar el producto en la base de datos
-$query = "INSERT INTO productos (nombre, precio, unidades, modelo, marca, detalles) VALUES (?, ?, ?, ?, ?, ?)";
-$stmt = $conn->prepare($query);
-$stmt->bind_param("sdisss", $data['nombre'], $data['precio'], $data['unidades'], $data['modelo'], $data['marca'], $data['detalles']);
+$response = array('status' => 'error', 'message' => 'Error al actualizar el producto');
 
-if ($stmt->execute()) {
-    echo json_encode(['status' => 'success', 'message' => 'Producto agregado']);
-} else {
-    echo json_encode(['status' => 'error', 'message' => 'Error al agregar producto']);
+if (isset($data['id']) && isset($data['producto'])) {
+    $id = $data['id'];
+    $producto = $data['producto'];
+    
+    $sql = "UPDATE productos SET 
+        nombre = '{$producto['nombre']}', 
+        marca = '{$producto['marca']}', 
+        modelo = '{$producto['modelo']}', 
+        precio = {$producto['precio']}, 
+        detalles = '{$producto['detalles']}', 
+        unidades = {$producto['unidades']}, 
+        imagen = '{$producto['imagen']}' 
+        WHERE id = {$id}";
+    
+    if ($conexion->query($sql)) {
+        $response['status'] = 'success';
+        $response['message'] = 'Producto actualizado correctamente';
+    } else {
+        $response['message'] = 'Error en la consulta: '.mysqli_error($conexion);
+    }
 }
 
-$stmt->close();
-$conn->close();
+$conexion->close();
+echo json_encode($response, JSON_PRETTY_PRINT);
 ?>
