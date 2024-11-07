@@ -30,4 +30,8 @@ if (isset($data['id']) && isset($data['producto'])) {
 
 $conexion->close();
 echo json_encode($response, JSON_PRETTY_PRINT);
+<<<<<<< HEAD
 ?>
+=======
+?>
+>>>>>>> dev

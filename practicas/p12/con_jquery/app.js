@@ -186,5 +186,9 @@ var baseJSON = {
         $('#description').val(JSON.stringify(productoJson, null, 2));
       }
     });
+<<<<<<< HEAD
   });
   
+=======
+  });
+>>>>>>> dev
