@@ -1,0 +1,97 @@
+<CatalogoVOD>
+    <cuenta>
+        <correo>fernando.sosaju@alumno.buap.mx</correo>
+        <perfiles>
+            <perfil>
+                <usuario>Usuario1</usuario>
+                <idioma>Español</idioma>
+            </perfil>
+            <perfil>
+                <usuario>Usuario2</usuario>
+                <idioma>Inglés</idioma>
+            </perfil>
+        </perfiles>
+    </cuenta>
+    <contenido>
+        <peliculas>
+            <genero>
+                <nombre>Acción</nombre>
+                <titulo>
+                    <nombre>Iron Man</nombre>
+                    <duracion>126</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Avengers: Endgame</nombre>
+                    <duracion>181</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Spider-Man: No Way Home</nombre>
+                    <duracion>148</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Black Panther</nombre>
+                    <duracion>134</duracion>
+                </titulo>
+            </genero>
+            <genero>
+                <nombre>Comedia</nombre>
+                <titulo>
+                    <nombre>Thor: Ragnarok</nombre>
+                    <duracion>130</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Guardians of the Galaxy</nombre>
+                    <duracion>121</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Ant-Man</nombre>
+                    <duracion>117</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Guardians of the Galaxy Vol. 2</nombre>
+                    <duracion>136</duracion>
+                </titulo>
+            </genero>
+        </peliculas>
+        <programas>
+            <genero>
+                <nombre>Documental</nombre>
+                <titulo>
+                    <nombre>Marvel Studios: Legends</nombre>
+                    <duracion>60</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Assembling a Universe</nombre>
+                    <duracion>43</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Marvel Studios: Expanding the Universe</nombre>
+                    <duracion>12</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Avengers: Building a Digital Universe</nombre>
+                    <duracion>70</duracion>
+                </titulo>
+            </genero>
+            <genero>
+                <nombre>Drama</nombre>
+                <titulo>
+                    <nombre>WandaVision</nombre>
+                    <duracion>50</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>The Falcon and the Winter Soldier</nombre>
+                    <duracion>45</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Loki</nombre>
+                    <duracion>51</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Hawkeye</nombre>
+                    <duracion>47</duracion>
+                </titulo>
+            </genero>
+        </programas>
+    </contenido>
+</CatalogoVOD>
