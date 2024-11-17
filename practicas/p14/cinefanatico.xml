@@ -8,5 +8,6 @@
     <tarjeta noserie="11275" visitas="5" puntos="50">
         <nombre>Eloy Sosa Altamirano</nombre>
         <correo>eloy.sosa@correo.buap.mx</correo>
+        <telefono tipo="movil">2225477297</telefono>
     </tarjeta>
 </cinefanatico>
