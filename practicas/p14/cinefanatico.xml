@@ -1,0 +1,12 @@
+<!DOCTYPE cinefanatico SYSTEM "cinefanatico.dtd">
+<cinefanatico>
+    <tarjeta noserie="17093" visitas="10" puntos="100">
+        <nombre>Fernando Sosa Juárez</nombre>
+        <correo>fernando.sosaju@alumno.buap.mx</correo>
+        <telefono tipo="movil">2482002635</telefono>
+    </tarjeta>
+    <tarjeta noserie="11275" visitas="5" puntos="50">
+        <nombre>Eloy Sosa Altamirano</nombre>
+        <correo>eloy.sosa@correo.buap.mx</correo>
+    </tarjeta>
+</cinefanatico>
