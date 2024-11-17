@@ -4,7 +4,7 @@
 
   <Cuenta id="1" plan="premium" fechaIni="2022-02-01" fechaFin="2023-02-01">
     <Nombre>John Wick</Nombre>
-    <Correo></Correo>
+    <Correo>john011@gmail.com</Correo>
     <Telefono tipo="movil">
       <Numero>000-123-4567</Numero>
     </Telefono>
