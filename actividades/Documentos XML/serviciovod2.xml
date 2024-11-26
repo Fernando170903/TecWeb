@@ -1,0 +1,38 @@
+<CatalogoVOD>
+    <cuenta correo="fernando.sosaju@alumno.buap.mx">
+        <perfiles>
+            <perfil usuario="Usuario1" idioma="Español"/>
+            <perfil usuario="Usuario2" idioma="Inglés"/>
+        </perfiles>
+    </cuenta>
+    <contenido>
+        <peliculas>
+            <genero nombre="Acción">
+                <titulo nombre="Iron Man" duracion="126"/>
+                <titulo nombre="Avengers: Endgame" duracion="181"/>
+                <titulo nombre="Spider-Man: No Way Home" duracion="148"/>
+                <titulo nombre="Black Panther" duracion="134"/>
+            </genero>
+            <genero nombre="Comedia">
+                <titulo nombre="Thor: Ragnarok" duracion="130"/>
+                <titulo nombre="Guardians of the Galaxy" duracion="121"/>
+                <titulo nombre="Ant-Man" duracion="117"/>
+                <titulo nombre="Guardians of the Galaxy Vol. 2" duracion="136"/>
+            </genero>
+        </peliculas>
+        <programas>
+            <genero nombre="Documental">
+                <titulo nombre="Planet Earth II" duracion="50"/>
+                <titulo nombre="The Social Dilemma" duracion="94"/>
+                <titulo nombre="Our Planet" duracion="55"/>
+                <titulo nombre="13th" duracion="100"/>
+            </genero>
+            <genero nombre="Drama">
+                <titulo nombre="WandaVision" duracion="50"/>
+                <titulo nombre="The Falcon and the Winter Soldier" duracion="45"/>
+                <titulo nombre="Loki" duracion="51"/>
+                <titulo nombre="Hawkeye" duracion="47"/>
+            </genero>
+        </programas>
+    </contenido>
+</CatalogoVOD>
